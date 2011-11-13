@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">BEER DIARY</string>
+    <string name="menu_brewery">Brewery</string>
+    <string name="menu_beer">Beer</string>
+    <string name="menu_buddy">Buddies</string>
+    <string name="menu_style">Style</string>
+    <string name="menu_review">Review</string>
+    <string name="menu_about">About</string>
+    <string name="str_name">Name</string>
+    <string name="str_website">Website</string>
+    <string name="str_description">Description</string>
+    <string name="btn_save">Done</string>
+    <string name="msg_insert_success">Your data has been saved.</string>
+
+</resources>
