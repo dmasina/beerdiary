@@ -16,4 +16,8 @@ public class MainActivity extends Activity {
 	public void onClickBrewery ( View v ) {
 		startActivity( new Intent( getBaseContext(), BreweryInsertActivity.class ) );
 	}
+	
+	public void onClickStyle ( View v ) {
+		startActivity( new Intent( getBaseContext(), BreweryListActivity.class ) );
+	}
 }

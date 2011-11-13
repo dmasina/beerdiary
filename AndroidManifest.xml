@@ -19,6 +19,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".BreweryInsertActivity"></activity>
+        <activity android:name=".BreweryListActivity"></activity>
     </application>
 
 </manifest>
