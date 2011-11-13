@@ -55,6 +55,7 @@ public final class R {
         public static final int menu_review=0x7f040005;
         public static final int menu_style=0x7f040004;
         public static final int msg_insert_success=0x7f04000b;
+        public static final int msg_required_field=0x7f04000c;
         public static final int str_description=0x7f040009;
         public static final int str_name=0x7f040007;
         public static final int str_website=0x7f040008;

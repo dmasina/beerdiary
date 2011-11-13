@@ -12,5 +12,6 @@
     <string name="str_description">Description</string>
     <string name="btn_save">Done</string>
     <string name="msg_insert_success">Your data has been saved.</string>
+    <string name="msg_required_field">You need to fill in all required fields.</string>
 
 </resources>

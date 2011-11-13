@@ -2,7 +2,7 @@ package br.blog.masina.beerdiary;
 
 public class BreweryVO {
 
-	public static String[]  columns = new String[] { "id", "name", "website", "description" };
+	public static String[] columns = new String[] { "id", "name", "website", "description" };
 	public static String  tableName = "brewery";
 	
 	private int id;
@@ -25,6 +25,21 @@ public class BreweryVO {
 		this.description = description;
 	}
 
+	public int checkFields() {		
+		
+		int result = 0; // Success Checked
+		
+		if (this.getName().length() == 0) { 
+			result = R.id.edt_name;
+		
+		//} else if (this.getWebsite().length() == 0) { 
+		//	result = R.id.edt_website;
+
+		}
+		
+		return result;
+	}
+	
 	public int getId() {
 		return id;
 	}
