@@ -34,7 +34,8 @@
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="10dp"
                 android:scaleType="fitCenter"
-                android:src="@drawable/bt_brewery" />
+                android:src="@drawable/bt_brewery"
+                android:onClick="onClickImage" />
 
             <TextView
                 android:id="@+id/txt_brewery"
