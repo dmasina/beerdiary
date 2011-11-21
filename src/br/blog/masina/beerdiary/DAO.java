@@ -19,24 +19,74 @@ public class DAO {
 		db = new DBHelper(ctx).getReadableDatabase();
 		Log.d("DAO", this.ctx.toString());
 	}
+
+	public boolean brewerySaveState (BreweryVO vo) {
+		Log.d("DAO", "brewerySaveState()");
+		ContentValues cv = breweryPopulate(vo); 
+		
+		Log.d("DAO", "Saved Name: " + vo.getName());		
+		Log.d("DAO", "Saved Website: " + vo.getWebsite());
+		Log.d("DAO", "Saved Description: " + vo.getDescription());
+
+		return db.update(BreweryVO.tableState, cv, null, null) > 0;
+	}
 	
-	public boolean insert (BreweryVO vo) {
-		ContentValues cv = populate(vo); 
+	public void breweryCleanState () {
+		Log.d("DAO", "breweryCleanState()");
+		BreweryVO vo = new BreweryVO(null, null, null);
+		ContentValues cv = breweryPopulate(vo);
+		db.update(BreweryVO.tableState, cv, null, null);
+	}
+	
+	public BreweryVO breweryRestoreState () {
+		Log.d("DAO", "breweryRestoreState()");
+		
+		BreweryVO client = null;
+		
+		Cursor c = db.query(BreweryVO.tableState, 
+				BreweryVO.columns, null, null, null, null, null );
+		
+		Log.d("DAO - COUNT", String.valueOf(c.getCount()));	
+				
+		if ( c.moveToFirst() ) {
+			
+			Log.d("DAO", "VOU RECUPERAR O VO");
+			client = new BreweryVO(
+				c.getString(c.getColumnIndex("name")),
+				c.getString(c.getColumnIndex("website")),
+				c.getString(c.getColumnIndex("description")));
+							
+			Log.d("DAO - RestoreState - Name", c.getString(c.getColumnIndex("name")));		
+			Log.d("DAO - RestoreState - Website", c.getString(c.getColumnIndex("website")));
+			Log.d("DAO - RestoreState - Description", c.getString(c.getColumnIndex("description")));
+	
+		} else {
+				
+				Log.d("DAO", "VOU CRIRAR O VO VAZIO");
+				client = new BreweryVO(null, null, null);
+		} 
+		
+		c.close();		
+		return client;
+	}
+	
+	public boolean breweryInsert (BreweryVO vo) {
+		ContentValues cv = breweryPopulate(vo);
 		return db.insert(BreweryVO.tableName, null, cv) > 0;
 	}
 	
-	public boolean delete (BreweryVO vo) {
+	public boolean breweryDelete (BreweryVO vo) {
 		String[] params = new String[] { String.valueOf(vo.getId()) };
 		return db.delete(BreweryVO.tableName , "id = ?", params) > 0;
 	}
 	
-	public boolean update (BreweryVO vo) {
-		ContentValues cv = populate(vo); 
+	public boolean breweryUpdate (BreweryVO vo) {
+		ContentValues cv = breweryPopulate(vo); 
 		String[] params = new String[] { String.valueOf(vo.getId()) };
 		return db.update(BreweryVO.tableName, cv, "id = ?", params) > 0;
 	}
 	
-	public BreweryVO get (int id) {
+	public BreweryVO breweryGet (int id) {
 		String[] params = new String[] { String.valueOf(id) };
 		Cursor c = db.query(BreweryVO.tableName, 
 				BreweryVO.columns, "id = ?", params, null, null, null );
@@ -55,7 +105,7 @@ public class DAO {
 		return client;
 	}
 	
-	public List<BreweryVO> getAll ( ) {
+	public List<BreweryVO> breweryGetAll ( ) {
 		Cursor c = db.query( BreweryVO.tableName, 
 				BreweryVO.columns, null, null, null, null, null );
 		
@@ -74,7 +124,7 @@ public class DAO {
 		return list;
 	}
 
-	private ContentValues populate(BreweryVO vo) {		
+	private ContentValues breweryPopulate(BreweryVO vo) {		
 		ContentValues cv = new ContentValues();
 		
 	 // cv.put( ClienteVO.columns[ 0 ], vo.getId());		

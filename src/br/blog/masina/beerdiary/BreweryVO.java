@@ -4,6 +4,7 @@ public class BreweryVO {
 
 	public static String[] columns = new String[] { "id", "name", "website", "description" };
 	public static String  tableName = "brewery";
+	public static String  tableState = "brewery_state";
 	
 	private int id;
 	private String name;

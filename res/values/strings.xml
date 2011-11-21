@@ -14,7 +14,8 @@
     <string name="msg_insert_success">Your data has been saved.</string>
     <string name="msg_required_field">You need to fill in all required fields.</string>
     <string name="msg_picture_file_or_camera">Pick an image from where?</string>
-    <string name="str_camera">Camera</string>
     <string name="str_file">File</string>
+    <string name="str_camera">Camera</string>
+    <string name="pic_default">default.jpg</string>
 
 </resources>

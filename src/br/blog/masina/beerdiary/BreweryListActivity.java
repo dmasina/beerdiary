@@ -43,7 +43,7 @@ public class BreweryListActivity extends Activity implements OnClickListener,
 	
 	private void getList() {
 		DAO dao = new DAO( getBaseContext() );
-		BreweryClientAdapter bca = new BreweryClientAdapter(getBaseContext(), dao.getAll());
+		BreweryClientAdapter bca = new BreweryClientAdapter(getBaseContext(), dao.breweryGetAll());
 	}
 	
 	@Override

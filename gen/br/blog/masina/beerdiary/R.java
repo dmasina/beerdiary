@@ -71,9 +71,10 @@ public final class R {
         public static final int msg_insert_success=0x7f05000b;
         public static final int msg_picture_file_or_camera=0x7f05000d;
         public static final int msg_required_field=0x7f05000c;
-        public static final int str_camera=0x7f05000e;
+        public static final int pic_default=0x7f050010;
+        public static final int str_camera=0x7f05000f;
         public static final int str_description=0x7f050009;
-        public static final int str_file=0x7f05000f;
+        public static final int str_file=0x7f05000e;
         public static final int str_name=0x7f050007;
         public static final int str_website=0x7f050008;
     }

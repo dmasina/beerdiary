@@ -38,7 +38,12 @@ public class DBHelper extends SQLiteOpenHelper {
 			+ "name TEXT,"
 			+ "website TEXT,"
 			+ "description TEXT);", 
-		"CREATE TABLE buddy ("
+		"CREATE TABLE brewery_state ("
+			+ "id INTEGER,"
+			+ "name TEXT,"
+			+ "website TEXT,"
+			+ "description TEXT);",
+			"CREATE TABLE buddy ("
 			+ "id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,"
 			+ "name TEXT,"
 			+ "description TEXT);",
